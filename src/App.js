@@ -1,28 +1,29 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import PrimarySearchAppBar from './Header';
+import CssBaseline from '@material-ui/core/CssBaseline';
+
+import Home from '../src/Home';
+import BannerMenu from '../src/common/banner-menu';
 
 class App extends Component {
-  render() {
+  render = () => {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <React.Fragment>
+        <CssBaseline>
+          <PrimarySearchAppBar />
+          <BannerMenu />
+          <Home />
+        </CssBaseline>
+      </React.Fragment>
+      // <div className="App">
+      //   <header className="App-header">
+      //     {/* <PrimarySearchAppBar/> */}
+      //   </header>
+      // </div>
     );
-  }
+  };
 }
 
 export default App;

@@ -1,0 +1,2 @@
+export const ADD_BANNER_PRODUCTS = 'ADD_BANNER_PRODUCTS';
+export const ADD_PRODUCT = 'ADD_PRODUCT';
