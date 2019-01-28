@@ -41,6 +41,14 @@ The app has been hosted on [https://ddstore-d4b7d.firebaseapp.com/](https://ddst
 
 # If the Voucher is Invalid or not as per the mentioned above an error message is shown
 
+### Code Layout
+
+- store folder contains Redux store files
+- container folder has all the views
+- common folder has the common components like Header and Card.
+- The app starts at App.js at root folder
+- The App.js -> container/Home -> common/Cart
+
 ### Decision to use React
 
 React just simply provides the View, therefore rendering is fast.In a complex e-commerce application where the speed of execution matters, react is the choice.
@@ -51,6 +59,12 @@ React just simply provides the View, therefore rendering is fast.In a complex e-
 - Redux Middleware Redux-Saga has been used to manage side-effects.
 - Updation of cart products has been made easier due to redux.
 - The state is always updated and any component can get the current state,thus it relieves you of passing props from parent to child in case of nested components.
+
+### Redux Dev Tools
+
+- Redux dev tools have been enabled in developemnt mode.
+- Helps to debug the state of the application.
+- Only applicable with chrome browser with redux extension
 
 ### Decision to use Material UI
 
@@ -86,3 +100,5 @@ React just simply provides the View, therefore rendering is fast.In a complex e-
 A simple test case has been added to render App component
 
 Code coverage results can be seen by running the command npm run test -- --coverage
+
+### Please Feel free to have a discussion about the app with me.

@@ -7,11 +7,11 @@ import watcherSaga from './sagas/';
 
 const storeEnhancers =
   process.env.NODE_ENV === 'development'
-    ? (window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()) || compose
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
     : compose;
+
 const initialiseSagaMiddleware = createSagaMiddleware();
-// const store = createStore(rootReducer, storeEnhancers(applyMiddleware(initialiseSagaMiddleware)));
-const store = createStore(rootReducer, compose(applyMiddleware(initialiseSagaMiddleware)));
+const store = createStore(rootReducer, storeEnhancers(applyMiddleware(initialiseSagaMiddleware)));
 initialiseSagaMiddleware.run(watcherSaga);
 
 export default store;
