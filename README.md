@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Project was created by Create React app and ejected using `npm run eject` to run linting and prettier.
 
 ## Available Scripts
 
@@ -12,10 +12,13 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-### `npm test`
+### `npm run test`
 
 Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run test -- --coverage`
+
+To test code coverage.
 
 ### `npm run build`
 
@@ -25,44 +28,56 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Voucher Codes
 
-### `npm run eject`
+- DDFIVE (£5.00 off your order)
+- DDTEN (£10.00 off when you spend over £50.00)
+- DDFIFTEEN (£15.00 off when you have bought at least one footwear item and spent
+  over £75.00)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# If the Voucher is Invalid or not as per the mentioned above an error message is shown
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### `Decision to use React`
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+React just simply provides the View, therefore fast rendering.In a complex e-commerce application where the speed of execution matters, react is the choice.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Decision to use Redux
 
-## Learn More
+- Redux has been used in app to maintain a central state.
+- Updation of cart products has been made easier due to redux.
+- The state is always updated and any component can get the current state,thus it relieves you of passing props from parent to child in case of nested components.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Decision to use Material UI
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- React Material UI gives you ready made responsive React components.
+- Flexbox CSS model ensures writing less media queries.
 
-### Code Splitting
+### Decision to use Css In Jss
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- The compiles styles are cached, therefore fast rendering
+- Simple class selectors ensure high selectors performance
+- Collision-free selectors therefore no use of **CSS methologies like BEM**.
 
-### Analyzing the Bundle Size
+### Linting and Prettier
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## To ensure code quality control eslint has been added
 
-### Making a Progressive Web App
+- Some es lint rules have been commented out due to conflicts with prettier.
+- The linting rules are present at .eslintrc.json
+- `npm run eslint-check` to check conflicts.Exits with an error code 2 if a conflict
+- Some es-lint rules have also been commentedat file level.Example no-udef rule in cart.js file
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## To automatically save and prettify code Prettier has been added
 
-### Advanced Configuration
+- Open VS Code settings (ctrl + ,) and change this to "editor.formatOnSave": true
+- Now on auto saving files code will be prettified according to es-lint rules
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+### Rest Services
 
-### Deployment
+[https://demo2985786.mockable.io/getAllproducts](https://demo2985786.mockable.io/getAllproducts) is the url to get mock data
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+### Test Cases
 
-### `npm run build` fails to minify
+A simple test case has been added to render App component
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Code coverage
