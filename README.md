@@ -41,13 +41,14 @@ The app has been hosted on [https://ddstore-d4b7d.firebaseapp.com/](https://ddst
 
 # If the Voucher is Invalid or not as per the mentioned above an error message is shown
 
-### `Decision to use React`
+### Decision to use React
 
-React just simply provides the View, therefore fast rendering.In a complex e-commerce application where the speed of execution matters, react is the choice.
+React just simply provides the View, therefore rendering is fast.In a complex e-commerce application where the speed of execution matters, react is the choice.
 
 ### Decision to use Redux
 
 - Redux has been used in app to maintain a central state.
+- Redux Middleware Redux-Saga has been used to manage side-effects.
 - Updation of cart products has been made easier due to redux.
 - The state is always updated and any component can get the current state,thus it relieves you of passing props from parent to child in case of nested components.
 
@@ -58,7 +59,7 @@ React just simply provides the View, therefore fast rendering.In a complex e-com
 
 ### Decision to use Css In Jss
 
-- The compiles styles are cached, therefore fast rendering
+- The compiled styles are cached, therefore rendering is fast
 - Simple class selectors ensure high selectors performance
 - Collision-free selectors therefore no use of **CSS methologies like BEM**.
 
@@ -66,10 +67,10 @@ React just simply provides the View, therefore fast rendering.In a complex e-com
 
 ## To ensure code quality control eslint has been added
 
-- Some es lint rules have been commented out due to conflicts with prettier.
-- The linting rules are present at .eslintrc.json
+- Some es-lint rules have been commented out due to conflicts with prettier.
+- The linting rules are present at .eslintrc.json at the root folder.
 - `npm run eslint-check` to check conflicts.Exits with an error code 2 if a conflict
-- Some es-lint rules have also been commentedat file level.Example no-udef rule in cart.js file
+- Some es-lint rules have also been commented at the file level.Example no-udef rule in cart.js file
 
 ## To automatically save and prettify code Prettier has been added
 
