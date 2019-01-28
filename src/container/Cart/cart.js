@@ -61,7 +61,6 @@ class Cart extends PureComponent {
   }
 
   componentDidUpdate(prevProps) {
-    debugger;
     this.setState({
       cartTotal: prevProps.cartTotal
     });
