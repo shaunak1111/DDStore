@@ -1,9 +1,18 @@
 The Project was created by Create React app and ejected using `npm run eject` to run linting and prettier.
 
+## Voucher Codes
+- upper case or lower case does not matter
+- DDFIVE (£5.00 off your order)
+- DDTEN (£10.00 off when you spend over £50.00)
+- DDFIFTEEN (£15.00 off when you have bought at least one footwear item and spent
+  over £75.00)
+
 ## Available Scripts
 
 In the project directory, you can run:
 
+### `npm intall`
+installs the necessary node modules
 ### `npm start`
 
 Runs the app in the development mode.<br>
@@ -32,12 +41,7 @@ Your app is ready to be deployed!
 
 The app has been hosted on [https://ddstore-d4b7d.firebaseapp.com/](https://ddstore-d4b7d.firebaseapp.com/)
 
-### Voucher Codes
 
-- DDFIVE (£5.00 off your order)
-- DDTEN (£10.00 off when you spend over £50.00)
-- DDFIFTEEN (£15.00 off when you have bought at least one footwear item and spent
-  over £75.00)
 
 # If the Voucher is Invalid or not as per the mentioned above an error message is shown
 
