@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -12,7 +12,7 @@ import { ADD_BUTTON, DELETE_BUTTON } from './../constants/general';
 
 const styles = {
   card: {
-    maxWidth: 345
+    // maxHeight: '42em'
   },
   media: {
     // ⚠️ object-fit is not supported by IE 11.
@@ -20,45 +20,73 @@ const styles = {
   }
 };
 
-const ImgMediaCard = ({ classes, click, img, content, maxWidth, addDeleteClick, id }) => {
+const ImgMediaCard = (props) => {
+  const { classes, click, img, maxWidth, addDeleteClick, product, tempStock } = props;
+  const {
+    id,
+    category,
+    productDescription,
+    productName,
+    stock,
+    originalPrice,
+    discountedPrice
+  } = product;
+  let width;
+  // function currying to pass two input data
   const handleAddOrDelete = (type) => (e) => {
-    console.log(type);
     addDeleteClick({
-      id: id,
+      props: props,
       type: type
     });
   };
 
-  console.log(maxWidth, 'max');
   if (maxWidth) {
-    maxWidth = `${maxWidth}`;
+    width = `${maxWidth}`;
   } else {
-    maxWidth = '345';
+    width = '345';
   }
   return (
-    <div onClick={click}>
-      <Card className={maxWidth}>
+    <div onClick={click} className={classes.card}>
+      <Card className={width}>
         <CardActionArea>
           <CardMedia
             component="img"
-            alt="restaurant images"
+            alt={productName + 'picture'}
             className={classes.media}
-            height="180"
+            height="300"
             image={img}
-            title="Contemplative Reptile"
+            title={productName}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
-              Featured
+              {productName}
+              <p>stock Left: {stock}</p>
+              <p>Price: &#163;{discountedPrice} </p>
+              <p>Category : {category}</p>
             </Typography>
-            <Typography component="p">{content}</Typography>
+            {discountedPrice !== originalPrice ? (
+              <Typography gutterBottom variant="h5" component="h2" color="error">
+                Original Price: &#163;{originalPrice}
+              </Typography>
+            ) : null}
+            <Typography component="p">{productDescription}</Typography>
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button size="small" color="primary" onClick={handleAddOrDelete(ADD_BUTTON)}>
+          <Button
+            disabled={!Boolean(stock)}
+            size="small"
+            color="primary"
+            onClick={handleAddOrDelete(ADD_BUTTON, props)}
+          >
             ADD
           </Button>
-          <Button size="small" color="primary" onClick={handleAddOrDelete(DELETE_BUTTON)}>
+          <Button
+            disabled={!Boolean(tempStock)}
+            size="small"
+            color="primary"
+            onClick={handleAddOrDelete(DELETE_BUTTON, props)}
+          >
             Delete
           </Button>
         </CardActions>
@@ -68,7 +96,13 @@ const ImgMediaCard = ({ classes, click, img, content, maxWidth, addDeleteClick, 
 };
 
 ImgMediaCard.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  click: PropTypes.func.isRequired,
+  img: PropTypes.string.isRequired,
+  maxWidth: PropTypes.number.isRequired,
+  addDeleteClick: PropTypes.func.isRequired,
+  product: PropTypes.object.isRequired,
+  tempStock: PropTypes.number.isRequired
 };
 
 export default withStyles(styles)(ImgMediaCard);

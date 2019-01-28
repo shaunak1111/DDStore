@@ -1,27 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import PrimarySearchAppBar from './Header';
+import PrimarySearchAppBar from '../src/common/Header';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
-import Home from '../src/Home';
-import BannerMenu from '../src/common/banner-menu';
+import Home from './container/Home/Home.js';
+import { Provider } from 'react-redux';
+import store from './store';
 
 class App extends Component {
   render = () => {
     return (
-      <React.Fragment>
-        <CssBaseline>
-          <PrimarySearchAppBar />
-          <BannerMenu />
-          <Home />
-        </CssBaseline>
-      </React.Fragment>
-      // <div className="App">
-      //   <header className="App-header">
-      //     {/* <PrimarySearchAppBar/> */}
-      //   </header>
-      // </div>
+      <Provider store={store}>
+        <React.Fragment>
+          <CssBaseline>
+            <PrimarySearchAppBar />
+            <Home />
+          </CssBaseline>
+        </React.Fragment>
+      </Provider>
     );
   };
 }
