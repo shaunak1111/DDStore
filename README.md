@@ -28,6 +28,10 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
+### FireBase hosting
+
+The app has been hosted on [https://ddstore-d4b7d.firebaseapp.com/](https://ddstore-d4b7d.firebaseapp.com/)
+
 ### Voucher Codes
 
 - DDFIVE (£5.00 off your order)
@@ -80,4 +84,4 @@ React just simply provides the View, therefore fast rendering.In a complex e-com
 
 A simple test case has been added to render App component
 
-Code coverage
+Code coverage results can be seen by running the command npm run test -- --coverage
