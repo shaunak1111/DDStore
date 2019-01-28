@@ -61,6 +61,10 @@ class Cart extends PureComponent {
   }
 
   componentDidUpdate(prevProps) {
+    debugger;
+    this.setState({
+      cartTotal: prevProps.cartTotal
+    });
     // Disable or enable coupon button based on items added in cart
     if (!this.props.cartList.length) {
       this.setState({
@@ -87,6 +91,7 @@ class Cart extends PureComponent {
       disableCouponBtn: false,
       invalidCoupon: false
     });
+    this.props.updateCartTotal(this.state.cartTotal);
   };
 
   handleCouponLogic(voucherName) {
@@ -170,7 +175,7 @@ class Cart extends PureComponent {
         <div className={classes.modalContainer}>
           <List>
             {listItems}
-            <Typography variant="h4" color="default">
+            <Typography className={classes.totalPrice} variant="h4" color="default">
               Total Price - &#163;{cartTotal}
             </Typography>
           </List>

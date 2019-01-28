@@ -26,14 +26,11 @@ const mapDispatchToProps = (dispatch) => {
 const imagePath = process.env.PUBLIC_URL + '/assets/';
 
 class Home extends PureComponent {
-  tempStock = 0;
   constructor(props) {
     super(props);
   }
 
   componentDidMount() {
-    // this.setState((prevState) => {
-    // });
     this.props.getAllProducts();
   }
 
@@ -63,7 +60,6 @@ class Home extends PureComponent {
             product={item}
             addDeleteClick={this.handleAddOrDeleteClick}
             maxWidth={500}
-            tempStock={this.tempStock}
           />
         </Grid>
       );

@@ -11,9 +11,6 @@ import Typography from '@material-ui/core/Typography';
 import { ADD_BUTTON, DELETE_BUTTON } from './../constants/general';
 
 const styles = {
-  card: {
-    // maxHeight: '42em'
-  },
   media: {
     // ⚠️ object-fit is not supported by IE 11.
     objectFit: 'cover'
@@ -21,7 +18,7 @@ const styles = {
 };
 
 const ImgMediaCard = (props) => {
-  const { classes, click, img, maxWidth, addDeleteClick, product, tempStock } = props;
+  const { classes, click, img, maxWidth, addDeleteClick, product } = props;
   const {
     id,
     category,
@@ -29,9 +26,11 @@ const ImgMediaCard = (props) => {
     productName,
     stock,
     originalPrice,
-    discountedPrice
+    discountedPrice,
+    tempStock
   } = product;
   let width;
+
   // function currying to pass two input data
   const handleAddOrDelete = (type) => (e) => {
     addDeleteClick({
@@ -46,7 +45,7 @@ const ImgMediaCard = (props) => {
     width = '345';
   }
   return (
-    <div onClick={click} className={classes.card}>
+    <div onClick={click}>
       <Card className={width}>
         <CardActionArea>
           <CardMedia
@@ -82,7 +81,7 @@ const ImgMediaCard = (props) => {
             ADD
           </Button>
           <Button
-            disabled={!Boolean(tempStock)}
+            disabled={!Boolean(tempStock - stock)}
             size="small"
             color="primary"
             onClick={handleAddOrDelete(DELETE_BUTTON, props)}
@@ -101,8 +100,7 @@ ImgMediaCard.propTypes = {
   img: PropTypes.string.isRequired,
   maxWidth: PropTypes.number.isRequired,
   addDeleteClick: PropTypes.func.isRequired,
-  product: PropTypes.object.isRequired,
-  tempStock: PropTypes.number.isRequired
+  product: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(ImgMediaCard);

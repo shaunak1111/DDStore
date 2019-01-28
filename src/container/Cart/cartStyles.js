@@ -55,14 +55,18 @@ const styles = (theme) => ({
     backgroundColor: grey['300'],
     boxShadow: [`0 1px ${grey['50']}`],
     textAlign: 'center',
-    marginTop: '2px'
+    marginTop: 2
   },
   gridButton: {
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   gridProperties: {
     textAlign: 'center'
+  },
+  totalPrice: {
+    marginTop: 15
   }
 });
 
