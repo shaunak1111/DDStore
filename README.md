@@ -47,7 +47,8 @@ The app has been hosted on [https://ddstore-d4b7d.firebaseapp.com/](https://ddst
 
 ### Code Layout
 
-- store folder contains Redux store files
+- store folder contains Redux files (store, actions, reducers and redux-saga middleware)
+- Rest Service is called through redux saga middleware in **saga/index.js**
 - container folder has all the views
 - common folder has the common components like Header and Card.
 - The app starts at App.js at root folder
