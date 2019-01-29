@@ -62,6 +62,7 @@ React just simply provides the View, therefore rendering is fast.In a complex e-
 
 - Redux has been used in app to maintain a central state.
 - Redux Middleware Redux-Saga has been used to manage side-effects.
+- Generator functions have been used to call asynchronous rest services using redux-saga.
 - Updation of cart products has been made easier due to redux.
 - The state is always updated and any component can get the current state,thus it relieves you of passing props from parent to child in case of nested components.
 
