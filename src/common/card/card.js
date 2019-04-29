@@ -9,11 +9,16 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { ADD_BUTTON, DELETE_BUTTON } from './../constants/general';
+import { UNMOUNTED } from 'react-transition-group/Transition';
 
 const styles = {
   media: {
     // ⚠️ object-fit is not supported by IE 11.
     objectFit: 'cover'
+  },
+  cardProperties: {
+    // height: '690px'
+    'box-shadow': 'none'
   }
 };
 
@@ -45,8 +50,8 @@ const ImgMediaCard = (props) => {
     width = '345';
   }
   return (
-    <div onClick={click}>
-      <Card className={width}>
+    <div id="hello" onClick={click}>
+      <Card className={width} className={classes.cardProperties}>
         <CardActionArea>
           <CardMedia
             component="img"
