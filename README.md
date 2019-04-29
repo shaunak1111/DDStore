@@ -1,9 +1,18 @@
 The Project was created by Create React app and ejected using `npm run eject` to run linting and prettier.
 
+## Voucher Codes
+- upper case or lower case does not matter
+- DDFIVE (£5.00 off your order)
+- DDTEN (£10.00 off when you spend over £50.00)
+- DDFIFTEEN (£15.00 off when you have bought at least one footwear item and spent
+  over £75.00)
+
 ## Available Scripts
 
 In the project directory, you can run:
 
+### `npm intall`
+installs the necessary node modules
 ### `npm start`
 
 Runs the app in the development mode.<br>
@@ -32,18 +41,14 @@ Your app is ready to be deployed!
 
 The app has been hosted on [https://ddstore-d4b7d.firebaseapp.com/](https://ddstore-d4b7d.firebaseapp.com/)
 
-### Voucher Codes
 
-- DDFIVE (£5.00 off your order)
-- DDTEN (£10.00 off when you spend over £50.00)
-- DDFIFTEEN (£15.00 off when you have bought at least one footwear item and spent
-  over £75.00)
 
 # If the Voucher is Invalid or not as per the mentioned above an error message is shown
 
 ### Code Layout
 
-- store folder contains Redux store files
+- store folder contains Redux files (store, actions, reducers and redux-saga middleware)
+- Rest Service is called through redux saga middleware in **saga/index.js**
 - container folder has all the views
 - common folder has the common components like Header and Card.
 - The app starts at App.js at root folder
@@ -57,6 +62,7 @@ React just simply provides the View, therefore rendering is fast.In a complex e-
 
 - Redux has been used in app to maintain a central state.
 - Redux Middleware Redux-Saga has been used to manage side-effects.
+- Generator functions have been used to call asynchronous rest services using redux-saga.
 - Updation of cart products has been made easier due to redux.
 - The state is always updated and any component can get the current state,thus it relieves you of passing props from parent to child in case of nested components.
 
