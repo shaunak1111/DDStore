@@ -16,6 +16,8 @@ import createBrowserHistory from 'history/createBrowserHistory';
 import Loadable from 'react-loadable';
 import Loading from '../src/common/loader';
 
+import populateList from '../src/common/Drawer/recursiveMenu';
+
 const LoadableHomeComponent = Loadable({
   loader: () => import('./container/Home/Home.js'),
   loading: Loading
@@ -25,6 +27,7 @@ const history = createBrowserHistory();
 
 export default class App extends Component {
   render = () => {
+    populateList();
     return (
       <Provider store={store}>
         <React.Fragment>

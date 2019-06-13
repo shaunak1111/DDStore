@@ -1,0 +1,33 @@
+{
+  "statusCode": 0,
+  "data": {
+    "enableNavCache": false,
+    "root": true,
+    "dataset": [
+      {
+        "title": "Food & Beverages",
+        "url": "/food",
+        "dataset": [
+          {
+            "title": "resturants",
+            "url": "/resturants",
+            "dataset": [
+              {
+                "title": "chinese",
+                "url": "/chinese"
+              }
+            ]
+          },
+          {
+            "title": "take aways",
+            "url": "/takeaway"
+          }
+        ]
+      }
+    ]
+  },
+  "tid": "e7665a4b-6919-4683-bb9c-9962b3b4edd0",
+  "sid": "fky5b7c2-70b6-42dc-b8eb-23a774467697",
+  "deviceId": "d4d492d2-dcca-40fb-94ef-a2bd41cd2b5e",
+  "csrfToken": "gADFOVfuejyB-q2T0FoMbK4mBNzj8YKVGCcpF620"
+}

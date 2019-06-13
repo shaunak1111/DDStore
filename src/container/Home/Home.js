@@ -11,6 +11,7 @@ import { addProductsToCart, deleteFromCart } from '../../store/actions';
 import { ADD_BUTTON } from '../../common/constants/general';
 import Cart from '../Cart';
 import styles from './HomeStyles';
+import Drawer from '../../common/Drawer';
 
 const mapStateToProps = (state) => {
   return { Products: state.Products };
@@ -65,12 +66,17 @@ class Home extends PureComponent {
       );
     });
 
-    return (
-      <div className={classes.root}>
+    const mainDrawerContent = (
+      <React.Fragment>
         <Grid className={classes.gridProperties} container spacing={8}>
           {numRows}
         </Grid>
         <Cart />
+      </React.Fragment>
+    );
+    return (
+      <div className={classes.root}>
+        <Drawer mainContent={mainDrawerContent} />
       </div>
     );
   }
